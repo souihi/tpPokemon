@@ -13,9 +13,9 @@ internal class Program
     static void Play(Pokemon monPokemon)
     {
        
-        PokemonSauvage pokemon_Sauvage = new PokemonSauvage("Jole");
+        PokemonSauvage pokemon_Sauvage = new PokemonSauvage("Jolan");
         bool wins = true;
-        bool NExtGame = false;
+        bool NextGame = false;
             Console.WriteLine("1 Combat");
             Console.WriteLine("2 Soin");
             Console.WriteLine("3 Fuir");
@@ -38,7 +38,9 @@ internal class Program
                         monPokemon.Attaque(pokemon_Sauvage);
                         Console.WriteLine();
                         Console.ReadKey(true);
-                        
+                        monPokemon.Capture(pokemon_Sauvage);
+
+                       
                     }
                     break;
                 case "2":
@@ -52,9 +54,10 @@ internal class Program
                     Console.ReadKey(true);
                     break;
                 case "4":
-                    monPokemon.Caracteristique();
+                   Console.WriteLine( monPokemon.Caracteristique());
                     Console.WriteLine();
                     Console.ReadKey(true);
+                break; 
             }
         if (wins)
         {
@@ -71,7 +74,7 @@ internal class Program
         Console.WriteLine("1 - Pikachu");
         Console.WriteLine("2 - Salemeche");
         Console.WriteLine("3 - Bulbizar");
-        Console.WriteLine("4 - Quitterx ");
+        Console.WriteLine("4 - Quitter");
 
         switch (Console.ReadLine())
         {

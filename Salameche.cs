@@ -10,9 +10,9 @@ namespace tpPokemon
     {
         public Salameche(string nom) : base(nom)
         {
-            pointDeVie = 100;
-            minDegats = 20;
-            maxDegats = 30;
+            pointDeVie = 500;
+            minDegats = 10;
+            maxDegats = 20;
             vitesse = 20;
 
         }

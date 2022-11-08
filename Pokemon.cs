@@ -44,6 +44,7 @@ namespace tpPokemon
             maxDegats = 0;
             Console.WriteLine("Vous avez fuis comme un lache !!!");
         }
+
         public double experienceRequise()
         {
             return Math.Round(4 * (Math.Pow(niveau, 3)/5));
@@ -55,7 +56,10 @@ namespace tpPokemon
                 "Point de vie" + pointDeVie + "\n" +
                 "Niveau : " + niveau + "\n" +
                 "Experience" + xp + "\n" +
-                "Degats" + minDegats + "" + maxDegats;
+                "Degats minimum : " + minDegats +"\n" +
+                "Degats maximum : " + maxDegats;
         }
+
+
     }
 }

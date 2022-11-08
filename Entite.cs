@@ -16,10 +16,12 @@ namespace tpPokemon
         protected Random random = new Random(); 
         protected bool GameOver = false;
         protected int nbPotion;
+
         public Entite(string nom)
         {
             this.nom = nom;
         }
+
         public void Attaque (Entite entite)
         {
             int degats = random.Next(minDegats, maxDegats);
@@ -40,6 +42,7 @@ namespace tpPokemon
             }
 
         }
+
         public void Soin()
         {
 
@@ -58,6 +61,7 @@ namespace tpPokemon
             }
 
         }
+
         protected void PerdrePv(int pointDeVie)
         {
             this.pointDeVie -= pointDeVie;
@@ -67,10 +71,35 @@ namespace tpPokemon
                 GameOver = true;
             }
         }
+
         public bool Dead()
         {
             return this.GameOver;
         }
+        List<Entite> list = new List<Entite>();
+        public void Capture(Entite entite)
+        {
+            if (entite.pointDeVie <=50)
+	        {
+                Console.WriteLine("Voulez vous capturer " + entite.nom);
+                string reponse = Console.ReadLine();
+                if(reponse == "O")
+                {
+                list.Add(entite);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Vous avez capturer " + entite.nom);
+                }else if(reponse == "N")
+                {
+                    Console.WriteLine("OK BON COMBAT ");
+                }
+            foreach (var item in list)
+	        {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+              Console.WriteLine("Liste des pokemon capturé " + item.nom);
+	        }
+                
+        	}
 
+       }
     }
 }
